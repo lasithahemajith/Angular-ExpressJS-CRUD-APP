@@ -1,0 +1,24 @@
+<div>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Department Employee App</a>
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="adddepartment" class="nav-link">Add Departments</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="department" class="nav-link">Departments</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="addemployee" class="nav-link">Add Employees</a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="employees" class="nav-link">Employees</a>
+      </li>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <router-outlet></router-outlet>
+  </div>
+</div>

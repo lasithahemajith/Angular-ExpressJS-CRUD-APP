@@ -1,0 +1,52 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="employee.name"
+          name="name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="department_id">Department ID</label>
+        <input
+          type="number"
+          class="form-control"
+          id="department_id"
+          required
+          [(ngModel)]="employee.department_id"
+          name="department_id"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="nic">NIC</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nic"
+          required
+          [(ngModel)]="employee.nic"
+          name="nic"
+        />
+      </div>
+
+      <button (click)="saveEmployee()" class="btn btn-success">
+        Submit Employee Details
+      </button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Employee was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newEmployee()">
+        Add Employee
+      </button>
+    </div>
+  </div>
+</div>

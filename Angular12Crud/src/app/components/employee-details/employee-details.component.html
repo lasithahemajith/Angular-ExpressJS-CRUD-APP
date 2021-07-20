@@ -1,0 +1,76 @@
+<div>
+  <div *ngIf="currentEmployee.employees_id" class="edit-form">
+    <h4>Employee Details</h4>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          [(ngModel)]="currentEmployee.name"
+          name="name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="nic">NIC</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nic"
+          [(ngModel)]="currentEmployee.nic"
+          name="nic"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="department_id">Department ID</label>
+        <input
+          type="text"
+          class="form-control"
+          id="department_id"
+          [(ngModel)]="currentEmployee.department_id"
+          name="department_id"
+        />
+      </div>
+
+      <!-- <div class="form-group">
+          <label><strong>Status:</strong></label>
+          {{ currentTutorial.published ? "Published" : "Pending" }}
+        </div> -->
+    </form>
+
+    <!-- <button
+        class="badge badge-primary mr-2"
+        *ngIf="currentDepartment.published"
+        (click)="updatePublished(false)"
+      >
+        UnPublish
+      </button>
+      <button
+        *ngIf="!currentTutorial.published"
+        class="badge badge-primary mr-2"
+        (click)="updatePublished(true)"
+      >
+        Publish
+      </button> -->
+
+    <button class="badge badge-danger mr-2" (click)="deleteEmployee()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateEmployee()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentEmployee.employees_id">
+    <br />
+    <p>Cannot access employee...</p>
+  </div>
+</div>

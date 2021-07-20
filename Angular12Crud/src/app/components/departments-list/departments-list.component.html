@@ -1,0 +1,67 @@
+<div class="list row">
+  <!--div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by department name"
+        [(ngModel)]="name"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchName()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div-->
+  <div class="col-md-6">
+    <h4>Departments List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let department of departments; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveDepartment(department, i)"
+      >
+        {{ department.department_id + "  -  " + department.department_name }}
+      </li>
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllDepartments()">
+      Delete All
+    </button>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentDepartment.department_id">
+      <h4>Department Details</h4>
+      <div>
+        <label><strong>Name:</strong></label>
+        {{ currentDepartment.department_name }}
+      </div>
+      <div>
+        <label><strong>ID:</strong></label>
+        {{ currentDepartment.department_id }}
+      </div>
+      <!--div>
+        <label><strong>Status:</strong></label>
+        {{ currentDepartment.published ? "Published" : "Pending" }}
+      </div-->
+
+      <a
+        class="badge badge-warning"
+        routerLink="/department/{{ currentDepartment.department_id }}"
+      >
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!currentDepartment">
+      <br />
+      <p>Please click on a Department...</p>
+    </div>
+  </div>
+</div>
